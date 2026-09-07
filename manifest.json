@@ -2,9 +2,9 @@
   "$schema": "./schema/piphi-manifest.schema.json",
   "manifest_version": "1.0",
   "id": "piphi-network-zwave",
-  "name": "Piphi Network Zwave",
+  "name": "Z-Wave",
   "version": "0.1.0",
-  "description": "PiPhi starter runtime for command-class-negotiated Z-Wave devices backed by a managed Z-Wave JS sidecar.",
+  "description": "Expose command-class-negotiated Z-Wave devices through the managed Z-Wave JS sidecar.",
   "metadata": {
     "generator": "piphi-network-create",
     "scaffold_version": "0.3.0",
@@ -133,5 +133,67 @@
         "default_widget": "tile"
       }
     }
-  ]
+  ],
+  "marketplace": {
+    "metadata_version": 2,
+    "display_name": "Z-Wave",
+    "summary": "Expose command-class-negotiated Z-Wave devices through the managed Z-Wave JS sidecar.",
+    "category": "other",
+    "regions": [
+      "WW"
+    ],
+    "languages": [
+      "en"
+    ],
+    "publisher": {
+      "name": "PiPhi Network",
+      "website_url": "https://piphi.io",
+      "support_url": "https://github.com/PiPhi-io/piphi-network-zwave/issues",
+      "security_contact": "support@piphi.io"
+    },
+    "access": [
+      {
+        "id": "local_network",
+        "label": "Local network access",
+        "reason": "Discovers or communicates with supported services and devices on the homeowner's local network.",
+        "required": true
+      }
+    ],
+    "compatibility": [
+      {
+        "brand": "Z-Wave Alliance",
+        "model": "Devices whose command classes are supported by the managed sidecar"
+      }
+    ],
+    "documentation_url": "https://github.com/PiPhi-io/piphi-network-zwave",
+    "support_url": "https://github.com/PiPhi-io/piphi-network-zwave/issues",
+    "changelog_url": "https://github.com/PiPhi-io/piphi-network-zwave/releases",
+    "quality_tier": "unrated",
+    "governance": {
+      "schema_version": 1,
+      "publication_status": "draft",
+      "rollout_percent": 0,
+      "lifecycle_status": "active",
+      "qualification": {
+        "status": "unverified"
+      }
+    },
+    "device_types": [
+      "Z-Wave controller",
+      "sensor",
+      "switch",
+      "lock",
+      "climate device"
+    ],
+    "protocols": [
+      "Z-Wave",
+      "Z-Wave JS event contract"
+    ],
+    "discovery_methods": [
+      "Z-Wave inclusion",
+      "sidecar node discovery"
+    ],
+    "connectivity": "local",
+    "offline_support": "full"
+  }
 }
